@@ -1,5 +1,11 @@
 HELP.md
-target/
+
+# Exclude all nested directories within target/
+target/**/
+
+# Include files directly within target/
+target/*
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
