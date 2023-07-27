@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            &nbsp;
+            &nbsp;
+            <a [routerLink]="['/registration']" type="button" class="nav-link" class="text-dark"
+                routerLinkActive="active"> &emsp; Register</a>
+        </li>
+    </ul>
+</nav>
+
+<br>
+
+<div class="container">
+    <h2>User Login / Sign In</h2>
+    <br>
+    <form #loginform="ngForm" (ngSubmit)="loginUser()">
+        <!--{(loginform. form. valid)) -->
+        <small class="text-danger">
+            {{message}}
+        </small>
+        <div class="form-group">
+            <label for="name">Username:</label>
+            <input type="text" class="form-control" placeholder="Enter Username" name=" name"
+                [(ngModel)]="user.userName" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">User name is required field</small>
+        </div>
+        <br>
+
+        <br>
+
+        <div class="form-group">
+
+            <label for="pwd">Password: </label>
+
+                <input type="password" class="form-control" placeholder="Enter password" name="pwd"
+                    [(ngModel)]="user.password" required #password="ngModel" [class.is-invalid]="password. invalid &&
+                    password.touched">
+
+                <small class="text-danger" [class.d-none]="password.valid || password. untouched">Password is required
+                    field</small>
+
+        </div>
+
+        <br>
+        <br> 
+        &nbsp; &nbsp; 
+        <br>
+
+        <a>
+
+        &nbsp;
+
+        &nbsp;
+
+        &nbsp;
+
+        <button [disabled]="loginform. form.invalid" type="submit" class="btn btn-success">Login</button>
+
+        &nbsp;
+
+        &nbsp;
+
+        &nbsp;
+
+        <button class="btn btn-light btn-block float-right" type="button" [routerLink]="['/registration']">New user?
+            Register Here! </button>
+
+        </a>
+
+    </form>
+    <br>
+</div>
+
+<!-- <small class="float-right" (click)="gotoregistration ()">New user? Register Herel</small> -->
+<!-- <small class="float-right" type="button" [routerLink] ="[/registration']">New user ? Register Here! </small> -->
